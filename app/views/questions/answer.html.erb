@@ -1,0 +1,20 @@
+<h1>Stupid Coaching</h1>
+
+<% message = params[:question] %>
+<% if message && message != "" %>
+  <% if message == "I am going to work" %>
+    <% response = "Great!" %>
+  <% elsif message.end_with?("?")    %>
+    <% response = "Silly question, get dressed and go to work!" %>
+  <% else %>
+    <% response = "I don't care, get dressed and go to work!" %>
+  <% end %>
+<% else %>
+  <% message = "Please enter a question for the coach" %>
+  <% response = nil %>
+<% end %>
+
+<p><%= message %></p>
+<p><%= response %></p>
+
+<%= link_to "Ask another question", ask_path %>
